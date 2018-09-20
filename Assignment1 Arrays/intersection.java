@@ -35,6 +35,6 @@ public class intersection{
         for(int i=0;i<a;i++) x[i] = sc.nextInt();
         for(int i=0;i<a;i++) y[i] = sc.nextInt();
         b = calMax(x,y,a);
-        for(int i=0;i!=-1;i++)System.out.println(b[i]);
+        for(int i=0;b[i]!=-1;i++)System.out.println(b[i]);
     }
 }
