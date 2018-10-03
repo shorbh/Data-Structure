@@ -1,8 +1,8 @@
 import java.util.*;
 public class intersection{
-    static int[] calMax(int x[],int y[],int a){
+    static ArrayList<Integer> calMax(int x[],int y[],int a){
         int z=0;
-        int d[] = new int[a];
+        ArrayList<Integer> h = new ArrayList<>();
         for(int i=0;i<a-1;i++){
             for(int j=0;j<a-i-1;j++){
                 if(x[j]>x[j+1]){
@@ -19,14 +19,13 @@ public class intersection{
         }
         int i=0,j=0,k=0;
         while(i<a&&j<a){
-            if(x[i]==y[j]){d[k]=x[i];i++;j++;k++;}
+            if(x[i]==y[j]){h.add(x[i]);i++;j++;k++;}
             else{
                 if(x[i]>y[j]) j++;
                 else i++;
             }
         }
-        d[k]=-1;
-        return d;
+        return h;
     }
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
@@ -34,7 +33,7 @@ public class intersection{
         int x[] = new int[a];int y[] = new int[a];
         for(int i=0;i<a;i++) x[i] = sc.nextInt();
         for(int i=0;i<a;i++) y[i] = sc.nextInt();
-        b = calMax(x,y,a);
-        for(int i=0;b[i]!=-1;i++)System.out.println(b[i]);
+        ArrayList<Integer> g = calMax(x,y,a);
+        System.out.println(g);
     }
 }
